@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+  }
+.user{
+    margin:10px;
+    padding:20px;
+    font-family:poppins;
+}
+.user-header{
+  margin-bottom:20px;
+  display:flex;
+}
+.user-info{
+  justify-content:center;
+}
+[class*="col-"] {
+float: left;
+padding: 15px;
+}
+.col-3 {width: 25%;}
+.col-9 {
+    width: 75%;
+    background-color: #E5E5E5;
+    padding:40px;
+    height:auto;
+}
+
+
+.menu ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.menu li {
+padding: 8px;
+margin-bottom: 7px;
+}
+.menu li:hover {
+  cursor: pointer;
+}
+.active{
+  color:#009444;
+}

@@ -1,0 +1,27 @@
+.logos{
+    display:flex;
+    justify-content:space-between;
+}
+.slack{
+   width:140px;
+   height:36px;
+}
+.google{
+    width:129px;
+    height:44px;
+}
+.uber{
+    width:99px;
+    height:56px;
+}
+.netflix{
+    width:120px;
+    height:67px;
+}
+.airbnb{
+    width:161px;
+    height:51px;
+}
+@media screen and (max-width:768px){
+    
+}

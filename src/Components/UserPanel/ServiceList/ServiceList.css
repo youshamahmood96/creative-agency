@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+.list-body{
+    display:inline;
+}
+.list-cards{
+    display:inline-block;
+    width:415px;
+    height:254px;
+    border-radius:10px;
+    padding:10px;
+    background-color:white;
+    margin-right:20px;
+}
+@media screen and (max-width:768px){
+    .list-body{
+        
+    }
+    .list-cards{
+        width:100%;
+        height:auto;
+        border-radius:10px;
+        padding:10px;
+    } 
+}
+.list-images{
+    width:74px;
+    height:74px;
+    display: block;
+    margin-right: auto;
+    margin-bottom:20px;
+}
+.list-cards h4{
+    font-weight:800;
+}
+.list-cards p{
+    font-weight:300;
+}

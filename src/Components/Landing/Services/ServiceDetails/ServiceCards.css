@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+.service-body{
+    display:inline;
+    font-family:  'Poppins', sans-serif;
+}
+.service-cards{
+    padding:20px 0px;
+    display:inline-block;
+    margin:15px;
+    border-radius:10px;
+    position:relative;
+    width:370px;
+    height:319px;
+    align-items:center;
+    text-align:center;
+}
+.service-images{
+    width:74px;
+    height:74px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.service-cards:hover{
+    box-shadow: 20px 20px 20px 20px lightgrey;
+    cursor: pointer;
+}
+.service-title{
+    margin-top:50px;
+    font-weight:800;
+    color:black !important;
+}
+.service-description{
+    margin-top:30px;
+    width:240px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight:300;
+    color:black !important;
+}

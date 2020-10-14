@@ -1,0 +1,27 @@
+.Header-Header{
+    background: linear-gradient(176deg, #FBD062 89%, white 11%);
+    background-size:cover;
+}
+@media screen and (max-width: 768px) {
+    .Header{
+        background-size:cover;
+    }
+    .frame{
+        display:none;
+    }
+    main{
+        margin:20px;
+        padding:40px;
+    }
+    p{
+        padding:20px 0px;
+    }
+    button{
+        margin:20px 0px;
+    }
+    nav{
+        margin:20px;
+        padding:40px;
+        
+    }
+}
