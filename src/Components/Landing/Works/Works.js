@@ -15,7 +15,7 @@ const Works = () => {
         dots: true,
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
         autoplay: true,
         speed: 6000,
         autoplaySpeed: 6000,
@@ -24,7 +24,7 @@ const Works = () => {
     return (
         <div className="works" >
           <h2>Here are some of our <span style={{color:'#7AB259'}} >works</span></h2>
-          <Slider className="align-items-center" {...settings}>
+          <Slider {...settings}>
             <div>
               <img src = {carousel1} alt='1'/>
             </div>

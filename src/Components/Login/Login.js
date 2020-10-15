@@ -1,15 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import './Login.css'
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import { UserContext } from '../../App';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { initializeLoginFrameWork } from './LoginManager';
 import google from '../../images/icons/google.png';
-import logo from '../../images/logos/logo.png'
+import logo from '../../images/logos/logo.png';
+import jwt_decode from "jwt-decode";
 const Login = () => {
-    const [user, setLoggedInUser] = useContext(UserContext)
-
+    const token = sessionStorage.getItem('token')
+    let user;
+    if(token){
+        user = jwt_decode(token);
+    }
 
     const history = useHistory();
     const location = useLocation();
@@ -20,28 +23,27 @@ const Login = () => {
 
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     
-
-    
+    const storeAuthToken = () =>{
+        firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+            sessionStorage.setItem('token',idToken)
+          }).catch(function(error) {
+            // Handle error
+          });
+    }
     const handleGoogleSignIn = () => {
         firebase.auth().signInWithPopup(googleProvider)
             .then(result => {
-                const createdUser = result.user;
-                const newUserInfo = { ...user } 
-                newUserInfo.name = createdUser.displayName;
-                newUserInfo.email = createdUser.email
-                setLoggedInUser(newUserInfo) 
-                history.replace(from); 
+                storeAuthToken();
+                setTimeout(function(){ history.replace(from) }, 2000);
             })
             .catch(function (error) {
-                const newUserInfo = { ...user } 
-                newUserInfo.error = error.message;
-                setLoggedInUser(newUserInfo)
+                console.log(error);
             });
     }
 
 
     
-
+    
     return (
         <div className='container'>
         <Link to='/'><img className='logo center' src={logo} alt="logo"></img></Link>

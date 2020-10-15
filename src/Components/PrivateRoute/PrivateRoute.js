@@ -1,14 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { UserContext } from '../../App';
-
+import jwt_decode from "jwt-decode";
 const PrivateRoute = ({ children, ...rest }) => {
-    const [loggedInUser,setLoggedInUser] = useContext(UserContext)
+    const token = sessionStorage.getItem('token')
+    let user;
+    if(token){
+        user = jwt_decode(token);
+    }
+    
+
     return (
         <Route
             {...rest}
             render={({ location }) =>
-                loggedInUser.email ? (
+                user? (
                     children
                 ) : (
                         <Redirect

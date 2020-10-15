@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useContext } from 'react';
-import { UserContext } from '../../../App';
 import ServiceListCards from './ServiceListCards';
-
+import jwt_decode from "jwt-decode";
 const ServiceList = () => {
+    const token = sessionStorage.getItem('token')
+    const user = jwt_decode(token);
     const[services,setServices] = useState([])
-    const [user, setLoggedInUser] = useContext(UserContext)
     useEffect(()=>{
-    fetch('http://localhost:5000/totalServices?email='+user.email)
+    fetch('https://ancient-depths-25434.herokuapp.com/totalServices?email='+user.email)
     .then(res=>res.json())
     .then(data=>setServices(data))
 },[])

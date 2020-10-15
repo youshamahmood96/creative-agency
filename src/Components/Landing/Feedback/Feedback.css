@@ -1,0 +1,59 @@
+.feedback-body{
+    display:inline;
+    font-family:  'Poppins', sans-serif;
+    margin-left: auto;
+}
+.feedback-cards{
+    padding:20px 0px;
+    display:inline-block;
+    margin:15px;
+    border-radius:10px;
+    position:relative;
+    width:370px;
+    height:212px;
+    align-items:center;
+    text-align:center;
+    border:1px solid lightgrey;
+}
+.feedback-images{
+    width:74px;
+    height:74px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.feedback-cards:hover{
+    cursor: pointer;
+}
+.feedback-title{
+    font-weight:800;
+    color:black !important;
+    margin-top:10px;
+}
+.feedback-description{
+    margin-top:10px;
+    padding:10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight:300;
+    color:black !important;
+    text-align:left !important;
+}
+.feedback-header{
+    display:flex;
+    padding-left:20px;
+}
+.feedback-header img{
+    width:70px;
+    height:70px;
+    margin-right:30px;
+}
+.review-holder{
+    margin-left:80px;
+    margin-bottom:40px;
+}
+@media screen and (max-width:768px){
+    .review-holder{
+        margin:60px;
+    }
+}

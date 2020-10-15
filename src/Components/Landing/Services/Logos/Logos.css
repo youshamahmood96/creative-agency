@@ -22,6 +22,16 @@
     width:161px;
     height:51px;
 }
-@media screen and (max-width:768px){
-    
+@media screen and (max-width:1000px){
+    .logos{
+        display:block;
+        justify-content:space-between;
+    }
+    .slack  {
+        margin:20px;
+    }
+    .google {margin:20px;}
+    .airbnb {margin:20px;}
+    .netflix {margin:20px;}
+    .uber{margin:20px;}
 }
