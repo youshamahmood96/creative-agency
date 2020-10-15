@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './ServiceCards.css'
 const ServiceCards = (props) => {
     const {title,description,image,_id} = props.service
-    console.log(title,description,image);
     return (
         <Link to={`/userPanel/${_id}`}>
         <div className="service-body">

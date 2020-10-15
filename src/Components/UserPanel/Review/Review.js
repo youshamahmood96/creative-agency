@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import {Form } from 'react-bootstrap';
 import './review.css'
 const Review = () => {
     const [toggle,setToggle] = useState(false)
@@ -9,7 +9,6 @@ const Review = () => {
         newInfo[e.target.name] = e.target.value
         setReview(newInfo)
     }
-    console.log(review);
     const submit =(e)=>{
         e.preventDefault();
         fetch('https://ancient-depths-25434.herokuapp.com/reviews',{

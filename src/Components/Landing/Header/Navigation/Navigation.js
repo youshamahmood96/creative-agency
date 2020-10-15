@@ -24,7 +24,7 @@ const Navigation = () => {
         })
         .then(res=>res.json())
         .then(data=>setisAdmin(data));
-    },[])
+    })
     return (
         
         <nav className="pt-4" >

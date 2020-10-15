@@ -9,11 +9,6 @@ const Order = () => {
     const user = jwt_decode(token);
     const status = 'Pending'
     const [toggle,setToggle] = useState(false)
-    const [file,setFile] = useState(null);
-    const handleFileChange = (e) =>{
-        const newFile = e.target.files[0];
-        setFile(newFile)
-    }
     const [service,setService] = useState({})
     const {id} = useParams()
     const services = Database()
@@ -26,7 +21,6 @@ const Order = () => {
     }
     const email = user.email
     var serviceSummary = {...service,title,description,image,email,status}
-    console.log(serviceSummary);
     const submit =(e)=>{
         e.preventDefault()
         fetch('https://ancient-depths-25434.herokuapp.com/addServices',{
@@ -56,7 +50,7 @@ const Order = () => {
           <Form.Control required onChange={handleChange} className="font-weight-light" type="text" name="price" placeholder="price" />
         </Form.Group>
         <Form.Group controlId="ControlInput4">
-        <Form.Control onChange={handleFileChange} type="file" name="icon"></Form.Control>
+        <Form.Control  type="file" name="icon"></Form.Control>
         </Form.Group>
         {
           toggle?

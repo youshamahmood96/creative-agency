@@ -19,7 +19,6 @@ const Feedback = () => {
     for(let i=0;i<reviews.length;i++){
        reviews[i].image = customers[i]
     }
-    console.log(reviews);
     return (
         <div>
            <h3 style={{textAlign: 'center',margin:'100px 0px'}}> <span  style={{color:'#171B4E',fontWeight:'bold'}}>Clients </span> <span style={{color:'#7AB259'}}> Feedback </span> </h3>

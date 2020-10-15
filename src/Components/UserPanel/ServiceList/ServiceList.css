@@ -20,7 +20,7 @@
     width:108px;
     height:40px;
     border:none;
-    background-color:transparent;
+    border-radius:5px;
 }
 @media screen and (max-width:768px){
     .list-body{
@@ -46,3 +46,29 @@
 .list-cards p{
     font-weight:300;
 }
+.pending{
+    width:108px;
+    height:40px;
+    border:none;
+    border-radius:5px;
+    background-color:#FFE3E3;
+    color:#FF4545;
+}
+.ongoing{
+    width:108px;
+    height:40px;
+    border:none;
+    border-radius:5px;
+    background-color:#ffeac2;
+    color:#FFBD3E;
+}
+.done{
+    width:108px;
+    height:40px;
+    border:none;
+    border-radius:5px;
+    background-color:#C6FFE0;
+    color:#009444;
+}
+
+  

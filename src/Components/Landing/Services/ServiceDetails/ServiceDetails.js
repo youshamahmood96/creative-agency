@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React from 'react';
 import Database from '../../../Database/Database';
 import ServiceCards from './ServiceCards';
-import './ServiceDetails.css'
+import './ServiceDetails.css';
+import { Lines } from 'react-preloaders';
 const ServiceDetails = () => {
     const services = Database()
     return (
@@ -11,7 +11,7 @@ const ServiceDetails = () => {
         <div className="services-provided">
         {
             services.length?(services.map(service =><ServiceCards key={service._id} service={service}></ServiceCards>))
-            :(<p>Loading...</p>)
+            :(<Lines />)
         }
         </div>
             

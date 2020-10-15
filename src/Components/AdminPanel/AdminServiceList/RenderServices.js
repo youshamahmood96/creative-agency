@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-import { AdminData } from './AdminData';
+import './AdminServiceList.css'
 
 const RenderServices = (props) => {
     const {_id,name,email,title,description,image,status} = props.srv

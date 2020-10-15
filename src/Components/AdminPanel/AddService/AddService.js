@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './AddService.css';
-import { useForm } from "react-hook-form";
 import { Col, Form } from 'react-bootstrap';
-import upload from '../../../images/icons/upload.png'
 const AddService = () => {
     const [service,setService] = useState({})
     const [file,setFile] = useState(null);

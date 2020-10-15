@@ -18,3 +18,9 @@ footer p {
     border:none;
     border-radius:5px;
 }
+footer small{
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+}

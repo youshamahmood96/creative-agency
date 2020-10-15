@@ -24,12 +24,14 @@ const Footer = () => {
             
             
                 <button type="submit" className="footer-btn">Send</button>
-
+                
             </Form>
-      
-                </Col>
+            </Col>
+                
             </Row>
+            
         </Container>
+        
         </footer>
     );
 };

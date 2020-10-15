@@ -30,8 +30,7 @@ const Admin = () => {
         })
         .then(res=>res.json())
         .then(data=>setisAdmin(data));
-    },[])
-    console.log(isAdmin);
+    })
     return (
         <div className="admin" >
             <div className="admin-header">

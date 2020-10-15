@@ -2,7 +2,6 @@ import React from 'react';
 import './Feedback.css'
 const FeedbackCards = (props) => {
     const {name,company,description,image} = props.rv
-    console.log(name,company,description);
     return (
         <div className="feedback-body">
           <div className="feedback-cards">
