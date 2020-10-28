@@ -1,7 +1,8 @@
 import React from 'react';
-import './Feedback.css'
+import './Feedback.css';
 const FeedbackCards = (props) => {
     const {name,company,description,image} = props.rv
+
     return (
         <div className="feedback-body">
           <div className="feedback-cards">

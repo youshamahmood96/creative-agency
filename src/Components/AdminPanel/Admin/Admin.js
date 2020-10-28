@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Admin.css';
 import logo from '../../../images/logos/logo.png'
 import plus from '../../../images/icons/plus.png';
@@ -11,26 +11,10 @@ import plusG from '../../../images/icons/plusG.png';
 import personG from '../../../images/icons/personAddG.png';
 import serviceG from '../../../images/icons/serviceG.png';
 import { Link } from 'react-router-dom';
-import jwt_decode from "jwt-decode";
 const Admin = () => {
-    const token = sessionStorage.getItem('token')
-    let user;
-    if(token){
-        user = jwt_decode(token);
-    }
-    const [isAdmin,setisAdmin] = useState(false)
     const [admin,setAdmin] = useState(true)
     const [services,setService] = useState(false)
     const [add,setAdd] = useState(false)
-    useEffect(()=>{
-        fetch('https://ancient-depths-25434.herokuapp.com/isAdmin',{
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email:user.email})
-        })
-        .then(res=>res.json())
-        .then(data=>setisAdmin(data));
-    })
     return (
         <div className="admin" >
             <div className="admin-header">

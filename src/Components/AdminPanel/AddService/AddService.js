@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './AddService.css';
 import { Col, Form } from 'react-bootstrap';
 const AddService = () => {
+    const [toggle,setToggle] = useState(false)
     const [service,setService] = useState({})
     const [file,setFile] = useState(null);
     const handleFileChange = (e) =>{
@@ -18,18 +19,18 @@ const AddService = () => {
         formData.append('file', file)
         formData.append('title', service.title)
         formData.append('description', service.description)
-
-  fetch('https://ancient-depths-25434.herokuapp.com/services', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-  })
-  .catch(error => {
-    console.error(error)
-  })
+        setToggle(true)
+        fetch('https://ancient-depths-25434.herokuapp.com/services', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+        })
+        .catch(error => {
+          console.error(error)
+        })
 }
     return (
         <div className="event-container" >
@@ -64,7 +65,8 @@ const AddService = () => {
       
         
       </Form>
-      <button onClick={submit} className="add-event-btn">Submit</button>
+      {toggle?(<p>Service Created !</p>)
+      :(<button onClick={submit} className="add-event-btn">Submit</button>)}
         </div>
     );
 };

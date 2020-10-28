@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import FeedbackCards from './FeedbackCards';
-import customer1 from '../../../images/customer1.png'
-import customer2 from '../../../images/customer2.png'
-import customer3 from '../../../images/customer3.png'
 import './Feedback.css'
 const Feedback = () => {
     const [totalReviews,setReviews] = useState([])
@@ -14,11 +11,27 @@ const Feedback = () => {
             setReviews(data)
         })
     },[])
-    const reviews = totalReviews.slice(0,3)
-    let customers  = [customer1, customer2, customer3]
-    for(let i=0;i<reviews.length;i++){
-       reviews[i].image = customers[i]
-    }
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+      
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+      
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+      
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+      
+        return array;
+      }
+    const shuffled = shuffle(totalReviews)
+    const reviews = shuffled.slice(0,3)
+    
     return (
         <div>
            <h3 style={{textAlign: 'center',margin:'100px 0px'}}> <span  style={{color:'#171B4E',fontWeight:'bold'}}>Clients </span> <span style={{color:'#7AB259'}}> Feedback </span> </h3>

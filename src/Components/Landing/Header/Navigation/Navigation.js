@@ -11,6 +11,7 @@ const Navigation = () => {
     if(token){
         user = jwt_decode(token);
     }
+    console.log(user);
     const logout = () => {
         sessionStorage.removeItem('token')
         window.location.reload();
@@ -38,7 +39,7 @@ const Navigation = () => {
                 <Nav.Link className="mr-5 font-weight-bold" href="#home">Home</Nav.Link>
                 <Nav.Link className="mr-5" >Our Portfolio</Nav.Link>
                 <Nav.Link className="mr-5">Our Team</Nav.Link>
-                <Nav.Link className="mr-5" >Contact Us</Nav.Link>
+                <Nav.Link className="mr-5" href="footer" >Contact Us</Nav.Link>
                 {
                     isAdmin?(<Link to='/admin'><button className="mr-5 login-btn" >Admin</button></Link>)
                     :null

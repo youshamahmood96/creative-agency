@@ -12,6 +12,7 @@ import Admin from './Components/AdminPanel/Admin/Admin';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Login from './Components/Login/Login';
 import User from './Components/UserPanel/User/User';
+import NotFound from './Components/NotFound';
 
 
 
@@ -24,17 +25,21 @@ function App() {
           <Route exact path='/'>
             <Home></Home>
           </Route>
-          <PrivateRoute path='/userPanel/:id'>
+          <Route path='/userPanel/:id'>
             <User></User>
-          </PrivateRoute>
-          <PrivateRoute path='/admin'>
+          </Route>
+          <Route path='/admin'>
             <Admin></Admin>
-          </PrivateRoute>
+          </Route>
         <Route path='/login'>
           <Login></Login>
         </Route>
         </Switch>
+        <Route path ="*">
+        <NotFound></NotFound>
+      </Route>
       </Router>
+      
 
     </div>
   );

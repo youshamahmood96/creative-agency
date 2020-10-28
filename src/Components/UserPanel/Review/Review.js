@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import {Form } from 'react-bootstrap';
-import './review.css'
+import './review.css';
+import jwt_decode from "jwt-decode";
 const Review = () => {
+    const token = sessionStorage.getItem('token')
+    let user;
+    if(token){
+        user = jwt_decode(token);
+    }
     const [toggle,setToggle] = useState(false)
     const [review,setReview] = useState({})
     const handleChange =(e) => {
         const newInfo = { ...review }
         newInfo[e.target.name] = e.target.value
+        newInfo.image = user.picture
         setReview(newInfo)
     }
+    console.log(review);
     const submit =(e)=>{
         e.preventDefault();
         fetch('https://ancient-depths-25434.herokuapp.com/reviews',{

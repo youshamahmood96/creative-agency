@@ -3,7 +3,6 @@ import { Table } from 'react-bootstrap';
 import RenderServices from './RenderServices';
 import './AdminServiceList.css'
 import { AdminData } from './AdminData';
-import { Lines } from 'react-preloaders';
 const ServiceList = () => {
     const services = AdminData()
     return (
@@ -19,9 +18,10 @@ const ServiceList = () => {
           </tr>
         </thead>
         <tbody>
-          {services.length!==0?services.map(srv=><RenderServices key={srv._id} srv={srv}></RenderServices>)
-          :(<Lines />)
+          {
+            services.map(srv=><RenderServices key={srv._id} srv={srv}></RenderServices>)
           }
+          
         </tbody>
       </Table>
         </div>

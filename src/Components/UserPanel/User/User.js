@@ -14,8 +14,8 @@ import serviceG from '../../../images/icons/serviceG.png';
 import jwt_decode from "jwt-decode";
 
 const User = () => {
-    const token = sessionStorage.getItem('token')
-    const user = jwt_decode(token);
+    // const token = sessionStorage.getItem('token')
+    // const user = jwt_decode(token);
     const [order,setOrder] = useState(true)
     const [services,setService] = useState(false)
     const [reviews,setReview] = useState(false)
@@ -25,7 +25,7 @@ const User = () => {
         <div className="user-header">
             <Link to='/'><img className="logo" src={logo} alt="logo"/></Link>
             <div className="ml-auto d-flex user-info">
-            <h5 >{user.name}</h5>
+            <h5 >{/*user.name*/}</h5>
             </div>
         </div>
 

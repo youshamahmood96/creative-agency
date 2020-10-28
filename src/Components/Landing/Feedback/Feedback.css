@@ -8,19 +8,15 @@
     display:inline-block;
     margin:15px;
     border-radius:10px;
-    position:relative;
     width:370px;
     height:212px;
-    align-items:center;
     text-align:center;
     border:1px solid lightgrey;
 }
-.feedback-images{
+.feedback-header img{
     width:74px;
     height:74px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius:40px;
 }
 .feedback-cards:hover{
     cursor: pointer;
@@ -33,8 +29,6 @@
 .feedback-description{
     margin-top:10px;
     padding:10px;
-    margin-left: auto;
-    margin-right: auto;
     font-weight:300;
     color:black !important;
     text-align:left !important;
